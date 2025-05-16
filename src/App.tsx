@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    fetch('http://localhost:5000/api/motorcycles')
+    fetch(`${import.meta.env.VITE_API_URL}/api/motorcycles`)
       .then(res => res.json())
       .then(data => {
         setMotorcycles(data);
@@ -124,5 +124,10 @@ function App() {
     </div>
   );
 }
+
+fetch(`${import.meta.env.VITE_API_URL}/api/motorcycles`)
+  .then(res => res.json())
+  .then(data => console.log(data))
+  .catch(err => console.error(err));
 
 export default App
