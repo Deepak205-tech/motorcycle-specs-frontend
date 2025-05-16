@@ -13,7 +13,7 @@ function App() {
 
   useEffect(() => {
     setLoading(true);
-    fetch(`${import.meta.env.VITE_API_URL}/api/motorcycles`)
+    fetch('https://motorcycle-specs-backend.onrender.com/api/motorcycles')
       .then(res => res.json())
       .then(data => {
         setMotorcycles(data);
